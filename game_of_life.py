@@ -20,16 +20,20 @@ def getNeighbourCount(board):
 
 
 def advanceBoard(board):
+    new_board = set()
     for cell, count in getNeighbourCount(board).iteritems():
         if count == 3 or (cell in board and count == 2):
-            yield cell
+            new_board.add(cell)
+    return new_board
 
 
 def generateBoard(desc):
+    board = set()
     for row, line in enumerate(desc.split("\n")):
         for col, elem in enumerate(line):
             if elem == 'X':
-                yield Cell(int(col), int(row))
+                board.add(Cell(int(col), int(row)))
+    return board
 
 
 def boardToString(board, pad=0):
@@ -48,6 +52,6 @@ def boardToString(board, pad=0):
 if __name__ == '__main__':
     f = set(generateBoard("......X.\nXX......\n.X...XXX"))
     for _ in range(130):
-        f = set(advanceBoard(f))
+        f = advanceBoard(f)
         print "\033[2J\033[1;1H" + boardToString(f, 2)
         time.sleep(0.1)

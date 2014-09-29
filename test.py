@@ -38,33 +38,33 @@ class GameOfLifeTest(unittest.TestCase):
 
     def testAdvanceEmptyBoard(self):
         alive = set()
-        self.assertEqual(alive, set(advanceBoard(alive)))
+        self.assertEqual(alive, advanceBoard(alive))
 
     def testAdvanceSingleCellBoard(self):
         board = set([Cell(0, 0)])
         expected = set()
-        actual = set(advanceBoard(board))
+        actual = advanceBoard(board)
         self.assertEqual(expected, actual)
 
     def testGenerateBoard(self):
         alive_string = 'X.\n.X'
         expected = set([Cell(0, 0), Cell(1, 1)])
-        actual = set(generateBoard(alive_string))
+        actual = generateBoard(alive_string)
         self.assertEqual(expected, actual)
 
     def testAdvanceBoard(self):
         board_string = '....\n.XXX\nXXX.'
-        actual = set(generateBoard(board_string))
+        actual = generateBoard(board_string)
         expected_string = '..X.\nX..X\nX..X\n.X..'
-        expected_0 = set(generateBoard(board_string))
-        expected_1 = set(generateBoard(expected_string))
+        expected_0 = generateBoard(board_string)
+        expected_1 = generateBoard(expected_string)
         for _ in range(3):
             self.assertEqual(expected_0, actual)
-            actual = set(advanceBoard(actual))
+            actual = advanceBoard(actual)
             self.assertEqual(expected_1, actual)
-            actual = set(advanceBoard(actual))
+            actual = advanceBoard(actual)
 
     def testToString(self):
         board_string = '..X.\n.XXX\nXXX.'
-        board = set(generateBoard(board_string))
+        board = generateBoard(board_string)
         self.assertEquals(boardToString(board), board_string)
