@@ -64,7 +64,7 @@ class GameOfLifeTest(unittest.TestCase):
             self.assertEqual(expected_1, actual)
             actual = set(advanceBoard(actual))
 
-    def testSerialization(self):
+    def testToString(self):
         board_string = '..X.\n.XXX\nXXX.'
         board = set(generateBoard(board_string))
         self.assertEquals(boardToString(board), board_string)

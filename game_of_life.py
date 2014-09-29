@@ -1,4 +1,5 @@
 from collections import namedtuple, defaultdict
+import time
 
 Cell = namedtuple('Cell', ['x', 'y'])
 
@@ -31,14 +32,22 @@ def generateBoard(desc):
                 yield Cell(int(col), int(row))
 
 
-def boardToString(board):
+def boardToString(board, pad=0):
     if not board:
-        return
+        return "empty"
     board_str = ""
     xs = [x for (x, y) in board]
     ys = [y for (x, y) in board]
-    for y in range(min(ys), max(ys) + 1):
-        for x in range(min(xs), max(xs) + 1):
+    for y in range(min(ys) - pad, max(ys) + 1 + pad):
+        for x in range(min(xs) - pad, max(xs) + 1 + pad):
             board_str += 'X' if Cell(x, y) in board else '.'
         board_str += '\n'
     return board_str.strip()
+
+
+if __name__ == '__main__':
+    f = set(generateBoard("......X.\nXX......\n.X...XXX"))
+    for _ in range(130):
+        f = set(advanceBoard(f))
+        print "\033[2J\033[1;1H" + boardToString(f, 2)
+        time.sleep(0.1)
