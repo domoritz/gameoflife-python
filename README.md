@@ -2,6 +2,13 @@
 
 Implementation of [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway's_Game_of_Life) in an infinite space in Python. Alive cells are stored in a set. To calculate the next iteration, we compute the number of neighbors for each cell that has neighbors.
 
+## What I liked/disliked about python
+
+* Python syntax is easy to read and write.
+* Named tuples, iterators, defaultdict, and list comprehensions are awesome.
+* Writing tests is really easy.
+* I wish imports would always work as expected. Why do I have to add `export PYTHONPATH='.'` to run tests on travis?
+
 
 ## Run an example
 
