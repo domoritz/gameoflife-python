@@ -50,7 +50,7 @@ def boardToString(board, pad=0):
 
 
 if __name__ == '__main__':
-    f = set(generateBoard("......X.\nXX......\n.X...XXX"))
+    f = generateBoard("......X.\nXX......\n.X...XXX")
     for _ in range(130):
         f = advanceBoard(f)
         print "\033[2J\033[1;1H" + boardToString(f, 2)
