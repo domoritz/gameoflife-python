@@ -4,12 +4,14 @@ Implementation of [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway's
 
 Peter Norvig has a fantastic explanation in a (Jupyter Notebook](https://nbviewer.jupyter.org/url/norvig.com/ipython/Life.ipynb).
 
+My goal was to write a pythonic program that is easy to understand (limit the use of comprehensions).
+
+
 ## What I liked/disliked about python
 
 * Python syntax is easy to read and write.
 * Named tuples, iterators, defaultdict, and list comprehensions are awesome.
 * Writing tests is really easy.
-* I wish imports would always work as expected. Why do I have to add `export PYTHONPATH='.'` to run tests on travis?
 
 
 ## Run an example
@@ -21,4 +23,4 @@ python game_of_life.py
 
 ## Running the tests
 
-Install nose and run `nosetests`.
+Run `python test.py`.

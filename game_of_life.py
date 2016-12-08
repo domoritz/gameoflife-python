@@ -21,7 +21,7 @@ def getNeighbourCount(board):
 
 def advanceBoard(board):
     new_board = set()
-    for cell, count in getNeighbourCount(board).iteritems():
+    for cell, count in getNeighbourCount(board).items():
         if count == 3 or (cell in board and count == 2):
             new_board.add(cell)
     return new_board
@@ -53,5 +53,5 @@ if __name__ == '__main__':
     f = generateBoard("......X.\nXX......\n.X...XXX")
     for _ in range(130):
         f = advanceBoard(f)
-        print "\033[2J\033[1;1H" + boardToString(f, 2)
+        print("\033[2J\033[1;1H" + boardToString(f, 2))
         time.sleep(0.1)

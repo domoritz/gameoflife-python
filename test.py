@@ -67,4 +67,7 @@ class GameOfLifeTest(unittest.TestCase):
     def testToString(self):
         board_string = '..X.\n.XXX\nXXX.'
         board = generateBoard(board_string)
-        self.assertEquals(boardToString(board), board_string)
+        self.assertEqual(boardToString(board), board_string)
+
+if __name__ == '__main__':
+    unittest.main()
