@@ -6,6 +6,8 @@ Peter Norvig has a fantastic explanation in a [Jupyter Notebook](https://nbviewe
 
 My goal was to write a pythonic program that is easy to understand (limit the use of comprehensions).
 
+I am implementing the Game of Life in different programming languages to learn about them. You can find [all of my implementations on GitHub](https://github.com/domoritz?tab=repositories&q=gameoflife).
+
 
 ## What I liked/disliked about python
 
