@@ -38,7 +38,7 @@ class GameOfLifeTest(unittest.TestCase):
 
     def testAdvanceEmptyBoard(self):
         alive = set()
-        self.assertEqual(alive, advanceBoard(alive))
+        self.assertEqual(advanceBoard(alive), set())
 
     def testAdvanceSingleCellBoard(self):
         board = set([Cell(0, 0)])
