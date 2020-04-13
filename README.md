@@ -26,3 +26,7 @@ python game_of_life.py
 ## Running the tests
 
 Run `python test.py`.
+
+## More
+
+Check out this sonification of the output of this program: https://github.com/Mystified131/GameOfMusic. 
