@@ -1,4 +1,4 @@
-# Conway's Game of Life in Python [![Build Status](https://travis-ci.org/domoritz/gameoflife-python.svg?branch=master)](https://travis-ci.org/domoritz/gameoflife-python)
+# Conway's Game of Life in Python ![Tests](https://github.com/domoritz/gameoflife-python/workflows/Tests/badge.svg)
 
 Implementation of [Conway's Game of Life](https://en.wikipedia.org/wiki/Conway's_Game_of_Life) in an infinite space in Python. Alive cells are stored in a set. To calculate the next iteration, we compute the number of neighbors for each cell that has neighbors.
 
